@@ -9,5 +9,7 @@ import Foundation
 
 struct Const {
     static let cellForReuseID = "summary_cell"
+    static let equipmentJSON = "russia_losses_equipment"
+    static let personnelJSON = "russia_losses_personnel"
 }
 

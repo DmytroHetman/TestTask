@@ -23,7 +23,14 @@ class SummaryTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        SummaryRepository.shared.fetchSummary {
+            equipment, personnnel in
+            SummaryRepository.shared.equipmentSummary = equipment
+            SummaryRepository.shared.personnelSummary = personnnel
+        }
+        print("!!!personnel: \(SummaryRepository.shared.personnelSummary)")
+        print("!!!equipment: \(SummaryRepository.shared.equipmentSummary)")
+
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
