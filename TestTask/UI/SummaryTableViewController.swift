@@ -41,13 +41,25 @@ class SummaryTableViewController: UIViewController {
 extension SummaryTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return SummaryRepository.shared.personnelSummary.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: Const.cellForReuseID, for: indexPath)
-        
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: Const.cellForReuseID, for: indexPath) as! SummaryTableViewCell
+        cell.config(from: SummaryRepository.shared.personnelSummary[indexPath.row])
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Const.detailsSummarySegueID {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let controller = segue.destination as! FullSummaryViewController
+                controller.dayToShow = SummaryRepository.shared.personnelSummary[indexPath.row].day
+                controller.personnel = SummaryRepository.shared.personnelSummary[indexPath.row].personnel
+            }
+            
+        }
+           
     }
     
     

@@ -26,9 +26,6 @@ class SummaryRepository {
         do {
             let summaryDataEquipment = try JSONDecoder().decode([SummaryEquipmentModel].self, from: equipmentData)
             let summaryDataPersonnel = try JSONDecoder().decode([SummaryPersonnelModel].self, from: personnelData)
-            print("2")
-//            print(summaryDataPersonnel)
-            print("2")
             
             let summaryEquipmentArray = summaryDataEquipment.compactMap {
                 summaryEquipment -> SummaryEquipment? in
@@ -58,14 +55,17 @@ class SummaryRepository {
             let summaryPersonnelArray = summaryDataPersonnel.compactMap {
                 summaryPersonnel -> SummaryPersonnel? in
                 
-               
-                
+                var powInfo: String = ""
+                if let pow = summaryPersonnel.pow {
+                    powInfo = pow == -1 ? "no info" : String(pow)
+                }
+                print(powInfo)
                 let summaryPersonnelOfDay = SummaryPersonnel(
                     date: summaryPersonnel.date,
                     day: summaryPersonnel.day,
                     personnel: summaryPersonnel.personnel,
                     personnelAbout: summaryPersonnel.personnelAbout,
-                    pow: summaryPersonnel.pow
+                    pow: powInfo
                 )
                 
                 return summaryPersonnelOfDay
@@ -77,18 +77,13 @@ class SummaryRepository {
             print("Unexpected error: \(error).")
         }
         
-        
-        
-        
     }
     
     func getSummaryData(from jsonFile: String) -> Data? {
         guard let path = Bundle.main.path(forResource: jsonFile, ofType: "json"),
               let data = try? Data(contentsOf: URL(fileURLWithPath: path))
         else { return nil }
-        print("1")
-        print(data)
-        print("1")
         return data
     }
 }
+

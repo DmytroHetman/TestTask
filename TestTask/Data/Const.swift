@@ -11,5 +11,7 @@ struct Const {
     static let cellForReuseID = "summary_cell"
     static let equipmentJSON = "russia_losses_equipment"
     static let personnelJSON = "russia_losses_personnel"
+    static let detailsSummarySegueID = "details_summary_segue"
+    
 }
 

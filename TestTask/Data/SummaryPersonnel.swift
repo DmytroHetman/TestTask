@@ -13,6 +13,6 @@ struct SummaryPersonnel {
     let day: Int
     let personnel: Int
     let personnelAbout: String
-    let pow: Int?
+    let pow: String
     
 }

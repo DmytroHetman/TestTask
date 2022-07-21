@@ -77,20 +77,14 @@ extension SummaryEquipmentModel {
         self.mobileSRBMSystem = try? values.decode(Int.self, forKey: .mobileSRBMSystem)
         self.greatestLossesDirection = try? values.decode(String.self, forKey: .greatestLossesDirection)
         self.militaryAuto = try? values.decode(Int.self, forKey: .militaryAuto)
-        print("militaryAuto \(self.militaryAuto)")
         self.fuelTank = try? values.decode(Int.self, forKey: .fuelTank)
-        print("fuelTank \(self.fuelTank)")
         if let vehiclesAndFuelTanks = try? values.decode(Int.self, forKey: .vehiclesAndFuelTanks) {
             self.vehiclesAndFuelTanks = vehiclesAndFuelTanks
-            print("vehicleandfuel \(self.vehiclesAndFuelTanks)")
         } else {
-
             if let militaryAuto = self.militaryAuto,
                let fuelTank = self.fuelTank {
                 self.vehiclesAndFuelTanks = militaryAuto + fuelTank
-
             }
-            print("vehicleandfuel \(self.vehiclesAndFuelTanks)")
         }
         self.cruiseMissles = try? values.decode(Int.self, forKey: .cruiseMissles)
     }

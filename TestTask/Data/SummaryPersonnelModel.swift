@@ -24,3 +24,20 @@ struct SummaryPersonnelModel: Codable {
     }
     
 }
+
+extension SummaryPersonnelModel {
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.date = try values.decode(String.self, forKey: .date)
+        self.day = try values.decode(Int.self, forKey: .day)
+        self.personnel = try values.decode(Int.self, forKey: .personnel)
+        self.personnelAbout = try values.decode(String.self, forKey: .personnelAbout)
+        if let pow = try? values.decode(Int?.self, forKey: .pow) {
+            self.pow = pow
+        } else {
+            self.pow = -1
+        }
+    }
+    
+}

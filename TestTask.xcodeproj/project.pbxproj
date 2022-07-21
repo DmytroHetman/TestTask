@@ -14,6 +14,7 @@
 		934C69ED2886FF6900CE1A6C /* russia_losses_personnel.json in Resources */ = {isa = PBXBuildFile; fileRef = 934C69E82886FF6900CE1A6C /* russia_losses_personnel.json */; };
 		934C69F12887552500CE1A6C /* SummaryEquipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C69F02887552500CE1A6C /* SummaryEquipment.swift */; };
 		934C69F32887553D00CE1A6C /* SummaryPersonnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C69F22887553D00CE1A6C /* SummaryPersonnel.swift */; };
+		934C69F52888BFD800CE1A6C /* FullSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C69F42888BFD800CE1A6C /* FullSummaryViewController.swift */; };
 		93F92D1A2885D24200D8CB72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F92D192885D24200D8CB72 /* AppDelegate.swift */; };
 		93F92D1C2885D24200D8CB72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F92D1B2885D24200D8CB72 /* SceneDelegate.swift */; };
 		93F92D1E2885D24200D8CB72 /* SummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F92D1D2885D24200D8CB72 /* SummaryTableViewController.swift */; };
@@ -32,6 +33,7 @@
 		934C69E82886FF6900CE1A6C /* russia_losses_personnel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_personnel.json; sourceTree = "<group>"; };
 		934C69F02887552500CE1A6C /* SummaryEquipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryEquipment.swift; sourceTree = "<group>"; };
 		934C69F22887553D00CE1A6C /* SummaryPersonnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPersonnel.swift; sourceTree = "<group>"; };
+		934C69F42888BFD800CE1A6C /* FullSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSummaryViewController.swift; sourceTree = "<group>"; };
 		93F92D162885D24200D8CB72 /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F92D192885D24200D8CB72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F92D1B2885D24200D8CB72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				93F92D2D2885F91000D8CB72 /* SummaryTableViewCell.swift */,
 				93F92D1F2885D24200D8CB72 /* Main.storyboard */,
 				93F92D242885D24600D8CB72 /* LaunchScreen.storyboard */,
+				934C69F42888BFD800CE1A6C /* FullSummaryViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				934C69F12887552500CE1A6C /* SummaryEquipment.swift in Sources */,
 				93F92D1E2885D24200D8CB72 /* SummaryTableViewController.swift in Sources */,
 				93F92D1A2885D24200D8CB72 /* AppDelegate.swift in Sources */,
+				934C69F52888BFD800CE1A6C /* FullSummaryViewController.swift in Sources */,
 				93F92D2E2885F91000D8CB72 /* SummaryTableViewCell.swift in Sources */,
 				93F92D1C2885D24200D8CB72 /* SceneDelegate.swift in Sources */,
 				934C69EA2886FF6900CE1A6C /* SummaryRepository.swift in Sources */,
