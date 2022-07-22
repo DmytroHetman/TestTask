@@ -30,6 +30,14 @@ class SummaryRepository {
             let summaryEquipmentArray = summaryDataEquipment.compactMap {
                 summaryEquipment -> SummaryEquipment? in
                 
+                let droneString = unwrapEquipment(from: summaryEquipment.drone)
+                let navalShipString = unwrapEquipment(from: summaryEquipment.navalShip)
+                let antiAircraftWarfareString = unwrapEquipment(from: summaryEquipment.antiAircraftWarfare)
+                let vehiclesAndFuelTanksString = unwrapEquipment(from: summaryEquipment.vehiclesAndFuelTanks)
+                let mobilesSRBMSystemString = unwrapEquipment(from: summaryEquipment.mobileSRBMSystem)
+                let cruiseMisslesString = unwrapEquipment(from: summaryEquipment.cruiseMissles)
+                let specialEquipmentString = unwrapEquipment(from: summaryEquipment.specialEquipment)
+                
                 let summaryEquipmentOfDay = SummaryEquipment(
                     date: summaryEquipment.date,
                     day: summaryEquipment.day,
@@ -39,14 +47,14 @@ class SummaryRepository {
                     apc: summaryEquipment.apc,
                     fieldArtillery: summaryEquipment.fieldArtillery,
                     mrl: summaryEquipment.mrl,
-                    drone: summaryEquipment.drone,
-                    navalShip: summaryEquipment.navalShip,
-                    antiAircraftWarfare: summaryEquipment.antiAircraftWarfare,
-                    specialEquipment: summaryEquipment.specialEquipment,
-                    mobileSRBMSystem: summaryEquipment.mobileSRBMSystem,
-                    greatestLossesDirection: summaryEquipment.greatestLossesDirection,
-                    vehiclesAndFuelTanks: summaryEquipment.vehiclesAndFuelTanks,
-                    cruiseMissles: summaryEquipment.cruiseMissles
+                    drone: droneString,
+                    navalShip: navalShipString,
+                    antiAircraftWarfare: antiAircraftWarfareString,
+                    specialEquipment: specialEquipmentString,
+                    mobileSRBMSystem: mobilesSRBMSystemString,
+                    greatestLossesDirection: summaryEquipment.greatestLossesDirection ?? "",
+                    vehiclesAndFuelTanks: vehiclesAndFuelTanksString,
+                    cruiseMissles: cruiseMisslesString
                 )
                 
                 return summaryEquipmentOfDay
@@ -55,11 +63,11 @@ class SummaryRepository {
             let summaryPersonnelArray = summaryDataPersonnel.compactMap {
                 summaryPersonnel -> SummaryPersonnel? in
                 
-                var powInfo: String = ""
+                var powInfo = ""
                 if let pow = summaryPersonnel.pow {
                     powInfo = pow == -1 ? "no info" : String(pow)
                 }
-                print(powInfo)
+                
                 let summaryPersonnelOfDay = SummaryPersonnel(
                     date: summaryPersonnel.date,
                     day: summaryPersonnel.day,
@@ -79,11 +87,19 @@ class SummaryRepository {
         
     }
     
-    func getSummaryData(from jsonFile: String) -> Data? {
+    private func getSummaryData(from jsonFile: String) -> Data? {
         guard let path = Bundle.main.path(forResource: jsonFile, ofType: "json"),
               let data = try? Data(contentsOf: URL(fileURLWithPath: path))
         else { return nil }
         return data
+    }
+    
+    private func unwrapEquipment(from equip: Int?) -> String {
+        var equipment = ""
+        if let unwrappedItem = equip {
+            equipment = unwrappedItem == -1 ? "no info" : String(unwrappedItem)
+        }
+        return equipment
     }
 }
 

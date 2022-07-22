@@ -27,9 +27,7 @@ class SummaryTableViewCell: UITableViewCell {
         self.date.text = "🗓 \(summaryPersonnelData.date)"
         self.day.text = "🌍 Day: \(String(summaryPersonnelData.day))"
         self.personnelLosses.text = "☠️ Personnel: \(summaryPersonnelData.personnel)"
-        
-        self.pow.text = "⛓ POW: \(summaryPersonnelData.pow)"
-        
+        self.pow.text = "🏳 POW: \(summaryPersonnelData.pow)"
         self.arrowImageView.image = UIImage(systemName: "chevron.forward")
         
     }

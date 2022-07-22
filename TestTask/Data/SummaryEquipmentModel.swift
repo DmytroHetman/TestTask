@@ -70,12 +70,36 @@ extension SummaryEquipmentModel {
         self.fieldArtillery = try values.decode(Int.self, forKey: .fieldArtillery)
         self.mrl = try values.decode(Int.self, forKey: .mrl)
         
-        self.drone = try? values.decode(Int.self, forKey: .drone)
-        self.navalShip = try? values.decode(Int.self, forKey: .navalShip)
-        self.antiAircraftWarfare = try? values.decode(Int.self, forKey: .antiAircraftWarfare)
-        self.specialEquipment = try? values.decode(Int.self, forKey: .specialEquipment)
-        self.mobileSRBMSystem = try? values.decode(Int.self, forKey: .mobileSRBMSystem)
-        self.greatestLossesDirection = try? values.decode(String.self, forKey: .greatestLossesDirection)
+        if let drone = try? values.decode(Int.self, forKey: .drone) {
+            self.drone = drone
+        } else {
+            self.drone = -1
+        }
+        if let navalShip = try? values.decode(Int.self, forKey: .navalShip) {
+            self.navalShip = navalShip
+        } else {
+            self.navalShip = -1
+        }
+        if let antiAircraftWarfare = try? values.decode(Int.self, forKey: .antiAircraftWarfare) {
+            self.antiAircraftWarfare = antiAircraftWarfare
+        } else {
+            self.antiAircraftWarfare = -1
+        }
+        if let specialEquipment = try? values.decode(Int.self, forKey: .specialEquipment) {
+            self.specialEquipment = specialEquipment
+        } else {
+            self.specialEquipment = -1
+        }
+        if let mobileSRBMSystem = try? values.decode(Int.self, forKey: .mobileSRBMSystem) {
+            self.mobileSRBMSystem = mobileSRBMSystem
+        } else {
+            self.mobileSRBMSystem = -1
+        }
+        if let greatestLossesDirection = try? values.decode(String.self, forKey: .greatestLossesDirection) {
+            self.greatestLossesDirection = greatestLossesDirection
+        } else {
+            self.greatestLossesDirection = "no info"
+        }
         self.militaryAuto = try? values.decode(Int.self, forKey: .militaryAuto)
         self.fuelTank = try? values.decode(Int.self, forKey: .fuelTank)
         if let vehiclesAndFuelTanks = try? values.decode(Int.self, forKey: .vehiclesAndFuelTanks) {
@@ -86,7 +110,11 @@ extension SummaryEquipmentModel {
                 self.vehiclesAndFuelTanks = militaryAuto + fuelTank
             }
         }
-        self.cruiseMissles = try? values.decode(Int.self, forKey: .cruiseMissles)
+        if let cruiseMissles = try? values.decode(Int.self, forKey: .cruiseMissles) {
+            self.cruiseMissles = cruiseMissles
+        } else {
+            self.cruiseMissles = -1
+        }
     }
     
     

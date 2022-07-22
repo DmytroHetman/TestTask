@@ -17,13 +17,13 @@ struct SummaryEquipment {
     let apc: Int
     let fieldArtillery: Int
     let mrl: Int
-    let drone: Int?
-    let navalShip: Int?
-    let antiAircraftWarfare: Int?
-    let specialEquipment: Int?
-    let mobileSRBMSystem: Int?
-    let greatestLossesDirection: String?
-    var vehiclesAndFuelTanks: Int?
-    let cruiseMissles: Int?
+    let drone: String
+    let navalShip: String
+    let antiAircraftWarfare: String
+    let specialEquipment: String
+    let mobileSRBMSystem: String
+    let greatestLossesDirection: String
+    var vehiclesAndFuelTanks: String
+    let cruiseMissles: String
     
 }
