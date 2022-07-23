@@ -1,0 +1,50 @@
+To-do list: Tasks to make the project ready for publishing in the App Store as a commercial product.
+
+After finishing working on the project, you have to check one more time, if your app matches all Apple Guidelines.
+When it's done and the project is conformed, we can go further. 
+
+The application distribution process can be divided into the following stages:
+
+• Archiving
+
+	• A process involving assembly and
+	packaging of the application in
+	.xcarchive archive
+	• The archive contains an executable file
+	application, Info.plist, and also
+	mapping files
+	symbols
+
+
+• Export settings and automatic checks
+
+	• Selection of distribution type
+
+	• Setting information for
+	debugging
+
+	• Selection of certificate and profile
+
+	• Preparation of symbols, signature
+	third-party libraries, signature
+	application
+
+	• The result is an .ipa archive that
+	contains the application bundle
+
+And distributing in App Store Connect
+
+• Preparation of the application for manual verification
+
+• Distribution to users - App Store or TestFlight
+	
+	After successful download, your
+	the application becomes available on App
+	Store Connect. This is the control panel
+	with all your applications that you are on
+	specify detailed information about
+	applications to display in App
+	Store, viewing statistics
+	the success of the distribution of the application,
+	manage roles in your team and
+	much more.
