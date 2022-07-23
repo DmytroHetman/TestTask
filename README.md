@@ -1,5 +1,7 @@
 # TestTask
-Test task for MacPaw internship
+Test task for MP internship, the app describes losses of russian forces.
+
+
 
 According to the MIT license, the repository must contain a notice with the following text:
 
